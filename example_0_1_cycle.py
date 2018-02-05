@@ -1,0 +1,18 @@
+# Part 0, example 1: reference cycle delays __del__.
+import sys
+
+print(sys.version)
+
+
+class C(object):
+    def __del__(self):
+        print('del')
+
+
+def fn():
+    d = {'c': C()}
+    d['d'] = d  # Create a cycle.
+
+
+fn()
+print('after fn')
