@@ -1,0 +1,5 @@
+digraph gc {
+    rankdir = LR
+    start [label = "acquire lock"]
+    start -> "do something" -> "gc.collect" -> "C.__del__" -> "acquire lock"
+}

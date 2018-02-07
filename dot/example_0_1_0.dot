@@ -1,0 +1,7 @@
+digraph cycle {
+    rankdir = LR
+    "C\nrefcount 1" [shape = rect]
+	"{}\nrefcount 2" -> "C\nrefcount 1"
+	"{}\nrefcount 2" -> "{}\nrefcount 2"
+	d -> "{}\nrefcount 2"
+}

@@ -1,0 +1,14 @@
+digraph threadlocal {
+    rankdir = LR
+    subgraph 1 {
+        local1 [shape = rect; label = "local.c" ]
+        C1 [shape = rect; label = "C for thread 1"]
+        local1 -> C1
+    }
+
+    subgraph 0 {
+        local0 [shape = rect; label = "local.c" ]
+        C0 [shape = rect; label = "C for thread 0"]
+        local0 -> C0
+    }
+}

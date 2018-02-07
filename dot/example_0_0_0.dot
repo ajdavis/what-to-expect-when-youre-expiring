@@ -1,0 +1,6 @@
+digraph refcount {
+    rankdir = LR
+	"C (refcount = 1)" [shape = rect]
+	c [shape = oval]
+    c -> "C (refcount = 1)"
+}

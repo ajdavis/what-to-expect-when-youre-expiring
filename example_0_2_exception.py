@@ -18,7 +18,7 @@ def fn():
     except Exception:
         exc_type, exc_val, exc_tb = sys.exc_info()
         traceback.print_tb(exc_tb, file=sys.stdout)
-        #exc_type = exc_val = exc_tb = None
+        exc_type = exc_val = exc_tb = None
 
 
 fn()

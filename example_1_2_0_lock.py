@@ -11,7 +11,7 @@ class C(object):
     def __del__(self):
         print('getting lock')
         with lock:
-            print('releasing lock')
+            print('doing cleanup task that requires lock')
 
 
 c = C()

@@ -1,0 +1,8 @@
+digraph module {
+    rankdir = LR
+    module [shape = rect; label = "module dict"]
+    C [shape = rect]
+    sys [shape = rect; label = "sys module"]
+    module -> C [label = "global \"z\""]
+    module -> sys [label = "global \"sys\""]
+}
