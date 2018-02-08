@@ -3,6 +3,6 @@ digraph module {
     module [shape = rect; label = "module dict"]
     sys [shape = rect; label = "None"]
     C [shape = rect]
+    module -> C [label = "global \"z\""]
     module -> sys [label = "global \"sys\""]
-    module -> C [label = "global \"c\""]
 }

@@ -1,9 +1,7 @@
-# Part 1, example 1: don't access threadlocals in __del__.
-import sys
+# Part 1, example 1.0: don't access threadlocals in __del__.
+# This example works fine.
 from time import sleep
 import threading
-
-print(sys.version)
 
 local = threading.local()
 
@@ -13,7 +11,6 @@ class C(object):
         print('init')
 
     def __del__(self):
-        local.x = 1
         print('del')
 
 

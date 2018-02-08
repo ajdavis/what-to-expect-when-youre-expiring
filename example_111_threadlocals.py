@@ -1,4 +1,5 @@
 # Part 1, example 1: don't access threadlocals in __del__.
+# In Python 2.6, this example leaks every second C object.
 import sys
 from time import sleep
 import threading
@@ -13,6 +14,8 @@ class C(object):
         print('init')
 
     def __del__(self):
+        # Access "local" while it's being updated in "fn".
+        local.x = 1
         print('del')
 
 

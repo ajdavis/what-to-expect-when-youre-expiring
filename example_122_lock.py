@@ -1,6 +1,5 @@
-# Part 1, example 2: don't take any locks. Use a cleanup thread.
+# Part 1, example 2.2: don't take any locks. Use a cleanup thread.
 import atexit
-import gc
 import sys
 import threading
 from time import sleep
@@ -13,7 +12,7 @@ lock = threading.Lock()
 class C(object):
     def __del__(self):
         print('getting lock')
-        cleanup_tasks.append('doing cleanup task that requires lock')
+        cleanup_tasks.append('cleanup task that needs lock')
 
 
 exiting = False
@@ -41,7 +40,8 @@ thread.start()
 def stop_cleanup_thread():
     global exiting
     exiting = True
-    thread.join(10)  # Try for 10 seconds.
+    # Try for 10 seconds. Failure won't block shutdown: thread is daemonic.
+    thread.join(10)
 
 
 atexit.register(stop_cleanup_thread)

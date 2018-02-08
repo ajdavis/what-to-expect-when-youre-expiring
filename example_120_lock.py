@@ -1,4 +1,4 @@
-# Part 1, example 2: don't take any locks.
+# Part 1, example 2.0: don't take any locks.
 import sys
 import threading
 
@@ -11,7 +11,7 @@ class C(object):
     def __del__(self):
         print('getting lock')
         with lock:
-            print('doing cleanup task that requires lock')
+            print('cleanup task that needs lock')
 
 
 c = C()

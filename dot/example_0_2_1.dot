@@ -4,7 +4,7 @@ digraph traceback {
     subgraph {
         rank = same
         C [shape = rect]
-        tb [shape = rect; label = "exc_tb\nrefcount 1"]
+        tb [shape = rect; label = "traceback\nrefcount 1"]
     }
     frame -> C [label = "local variable \"c\""]
     tb -> frame

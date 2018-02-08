@@ -1,6 +1,7 @@
 digraph cycle {
     rankdir = LR
+	d [label = "{}\nrefcount 1"]
     "C\nrefcount 1" [shape = rect]
-	"{}\nrefcount 1" -> "C\nrefcount 1"
-	"{}\nrefcount 1" -> "{}\nrefcount 1"
+	d -> "C\nrefcount 1" [label = "\"c\""]
+	d -> d
 }

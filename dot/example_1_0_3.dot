@@ -1,8 +1,8 @@
 digraph module {
     rankdir = LR
     module [shape = rect; label = "module dict"]
+    C [shape = rect; label = "None"]
     sys [shape = rect; label = "sys module"]
-    C [shape = rect]
     module -> sys [label = "global \"sys\""]
-    module -> C [label = "global \"z\""]
+    module -> C [label = "global \"c\""]
 }

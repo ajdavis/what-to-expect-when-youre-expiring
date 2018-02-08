@@ -2,7 +2,7 @@ digraph traceback {
     rankdir = LR
     frame [shape = rect]
     C [shape = rect]
-    tb [shape = rect; label = "exc_tb\nrefcount 1"]
+    tb [shape = rect; label = "traceback\nrefcount 1"]
     tb -> frame
     frame -> tb [label = "local variable \"exc_tb\""]
     frame -> C [label = "local variable \"c\""]
