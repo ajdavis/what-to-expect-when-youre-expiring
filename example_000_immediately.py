@@ -9,4 +9,4 @@ def fn():
 
 
 fn()
-print('after fn')
+print('shutting down')
