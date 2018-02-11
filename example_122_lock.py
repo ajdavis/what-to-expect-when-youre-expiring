@@ -11,7 +11,11 @@ exiting = False
 class C(object):
     def __del__(self):
         print('del')
-        cleanup_tasks.append('cleanup task that needs lock')
+        try:
+            cleanup_tasks.append('cleanup task that needs lock')
+        except:
+            # Too late: cleanup_tasks was set to None during shutdown.
+            pass
 
 
 def cleanup():
