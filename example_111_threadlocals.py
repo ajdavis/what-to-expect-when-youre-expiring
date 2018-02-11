@@ -1,10 +1,7 @@
 # Part 1, example 1: don't access threadlocals in __del__.
 # In Python 2.6, this example leaks every second C object.
-import sys
 from time import sleep
 import threading
-
-print(sys.version)
 
 local = threading.local()
 
@@ -23,7 +20,7 @@ def fn():
     local.c = C()
 
 
-for i in range(10):
+for i in range(4):
     t = threading.Thread(target=fn)
     t.start()
     t.join()

@@ -1,8 +1,7 @@
 # Part 1, example 2.0: don't take any locks.
-import sys
+# This deadlocks in CPython.
 import threading
 
-print(sys.version)
 
 lock = threading.Lock()
 
@@ -16,4 +15,4 @@ class C(object):
 
 c = C()
 with lock:
-    del c
+    c = None

@@ -1,10 +1,7 @@
 # Part 1, example 2.1: don't take any locks.
 # Deadlocks in PyPy as well as CPython.
 import gc
-import sys
 import threading
-
-print(sys.version)
 
 lock = threading.Lock()
 
@@ -18,5 +15,5 @@ class C(object):
 
 c = C()
 with lock:
+    c = None
     gc.collect()
-    del c

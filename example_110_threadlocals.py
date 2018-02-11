@@ -18,7 +18,7 @@ def fn():
     local.c = C()
 
 
-for i in range(10):
+for i in range(4):
     t = threading.Thread(target=fn)
     t.start()
     t.join()

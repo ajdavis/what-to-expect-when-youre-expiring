@@ -1,5 +1,7 @@
-# Part 1, example 2.2: don't take any locks. Use a cleanup thread.
+# Part 1, example 2.3: don't take any locks. Use a cleanup thread.
+# Proves even PyPy can use this technique, eventually.
 import atexit
+import gc
 import threading
 from time import sleep
 
@@ -26,7 +28,6 @@ def cleanup():
                 break
 
             with lock:
-                # Execute the cleanup task that needs lock.
                 print(task)
 
 
@@ -47,3 +48,4 @@ atexit.register(stop_cleanup_thread)
 c = C()
 with lock:
     c = None
+    gc.collect()
