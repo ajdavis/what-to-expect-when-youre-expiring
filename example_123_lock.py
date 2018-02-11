@@ -38,6 +38,7 @@ thread.start()
 
 def stop_cleanup_thread():
     global exiting
+    gc.collect()
     exiting = True
     # Try for 10 seconds. Failure won't block shutdown: thread is daemonic.
     thread.join(10)
@@ -48,4 +49,3 @@ atexit.register(stop_cleanup_thread)
 c = C()
 with lock:
     c = None
-    gc.collect()

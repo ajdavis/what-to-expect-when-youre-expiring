@@ -4,16 +4,14 @@ import threading
 from time import sleep
 
 lock = threading.Lock()
+cleanup_tasks = []
+exiting = False
 
 
 class C(object):
     def __del__(self):
         print('del')
         cleanup_tasks.append('cleanup task that needs lock')
-
-
-exiting = False
-cleanup_tasks = []
 
 
 def cleanup():

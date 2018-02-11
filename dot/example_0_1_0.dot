@@ -5,5 +5,5 @@ digraph cycle {
 	frame -> d [label = "\"d\""]
     "C\nrefcount 1" [shape = rect]
 	d -> "C\nrefcount 1" [label = "\"c\""]
-	d -> d
+	d -> d [label = "\"d\""]
 }
